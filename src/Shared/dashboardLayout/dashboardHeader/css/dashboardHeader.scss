@@ -1,0 +1,46 @@
+.dashboardHeader {
+  padding: 16px;
+  background-color: $backgroundPrimary;
+  &-container {
+    width: 100%;
+    @extend %displayCenter;
+    @include media567 {
+      flex-direction: column;
+    }
+    &__siteTitle {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 700;
+      margin-right: 44px;
+      margin-bottom: 0;
+      @include media1200 {
+        font-size: 22px;
+        margin-right: 34px;
+      }
+      @include media1023 {
+        font-size: 18px;
+        margin-right: 24px;
+      }
+      @include media767 {
+        display: none;
+      }
+      &--mobile {
+        color: #ffffff;
+        font-weight: 700;
+        display: none;
+        font-size: 18px;
+        margin-right: 0;
+        margin-bottom: 0;
+        @include media767 {
+          display: block;
+          margin-right: 16px;
+        }
+        @include media567 {
+          font-size: 16px;
+          margin-right: 0;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}

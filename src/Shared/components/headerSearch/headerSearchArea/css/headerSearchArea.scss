@@ -1,0 +1,125 @@
+.headerSearchArea {
+  position: absolute;
+  top: calc(100% + 16px);
+  width: calc(100% + 16px);
+  border: 1px solid gray;
+  border-top: none;
+  margin-bottom: 0;
+  @include media567 {
+    width: calc(100% + 32px);
+    left: -16px;
+  }
+  &-item {
+    cursor: pointer;
+    &:nth-child(odd) {
+      background-color: #f6f6f6;
+    }
+
+    &:nth-child(even) {
+      background-color: #e7e7e7;
+    }
+    &-container {
+      @extend %displayColumn;
+      padding: 10px 16px;
+      @include media567 {
+        flex-direction: row;
+      }
+      &-name {
+        @extend %displayCenter;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        @include media567 {
+          margin-bottom: 0;
+          flex: 1;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &__text {
+          font-size: 20px;
+          margin-bottom: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @include media1023 {
+            font-size: 18px;
+          }
+          @include media767 {
+            font-size: 16px;
+          }
+          @include media567 {
+            font-size: 14px;
+          }
+          @include media359 {
+            font-size: 12px;
+          }
+        }
+      }
+      &-contact {
+        @extend %displayCenter;
+        @include media567 {
+          flex-direction: column;
+          align-items: baseline;
+          min-width: 175px;
+        }
+        &-number,
+        &-email,
+        &-policy {
+          @extend %displayCenter;
+          svg {
+            height: 12px;
+            min-width: 12px;
+            margin-right: 3px;
+          }
+          span {
+            font-weight: 600;
+            font-size: 12px;
+            @include media1023 {
+              font-size: 11px;
+            }
+            @include media767 {
+              font-size: 10px;
+            }
+            @include media567 {
+              font-size: 9px;
+            }
+          }
+        }
+
+        &-number {
+          min-width: 115px;
+          margin-right: 25px;
+          svg {
+            height: 10px;
+          }
+          @include media567 {
+            margin-bottom: 5px;
+          }
+        }
+
+        &-email {
+          min-width: 240px;
+          max-width: 240px;
+          margin-right: 10px;
+          @include media1023 {
+            min-width: 140px;
+            max-width: 140px;
+          }
+          @include media567 {
+            margin-right: 0;
+            min-width: unset;
+          }
+          span {
+            font-size: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          @include media567 {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
